@@ -47,13 +47,13 @@ export default function AuthPage() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-background py-8">
-      <div className="bg-white rounded-lg shadow-md px-8 py-10 w-full max-w-sm border border-gray-100">
-        <h1 className="text-2xl font-semibold text-center mb-3 text-primary">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-background py-6 xs:py-8 px-2 w-full">
+      <div className="bg-white rounded-lg shadow-md px-4 xs:px-6 md:px-8 py-8 xs:py-10 w-full max-w-xs xs:max-w-sm border border-gray-100">
+        <h1 className="text-xl xs:text-2xl font-semibold text-center mb-2 xs:mb-3 text-primary">
           {view === "login" ? "Sign In" : "Create Account"}
         </h1>
 
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-3 xs:gap-4" onSubmit={handleSubmit}>
           <Input
             label="E-mail"
             type="email"
@@ -69,13 +69,13 @@ export default function AuthPage() {
             required
           />
           {error && (
-            <div className="text-red-500 text-center text-sm">{error}</div>
+            <div className="text-red-500 text-center text-xs xs:text-sm">{error}</div>
           )}
-          <Button type="submit" color="primary" loading={loading}>
+          <Button type="submit" color="primary" loading={loading} className="w-full">
             {view === "login" ? "Sign In" : "Register"}
           </Button>
         </form>
-        <div className="mt-4 text-center text-sm">
+        <div className="mt-3 xs:mt-4 text-center text-xs xs:text-sm">
           {view === "login" ? (
             <>
               New?{" "}

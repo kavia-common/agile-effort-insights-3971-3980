@@ -46,7 +46,7 @@ export default function ExcelUpload({ onUpload }: Props) {
 
   return (
     <form
-      className="border border-gray-200 rounded-lg p-6 bg-gray-50 flex flex-col gap-2 md:gap-4"
+      className="border border-gray-200 rounded-lg p-4 sm:p-6 bg-gray-50 flex flex-col gap-2 sm:gap-4 w-full"
       onSubmit={handleUpload}
     >
       <label className="font-semibold mb-1">
@@ -57,10 +57,10 @@ export default function ExcelUpload({ onUpload }: Props) {
         accept=".xls,.xlsx"
         disabled={uploading}
         onChange={(e) => setFile(e.target.files?.[0] || null)}
-        className="file:mr-2 file:py-2 file:px-4 file:rounded file:border-0 file:bg-primary file:text-white"
+        className="file:mr-1 sm:file:mr-2 file:py-2 file:px-4 file:rounded file:border-0 file:bg-primary file:text-white"
       />
-      {error && <div className="text-sm text-red-500">{error}</div>}
-      <Button type="submit" loading={uploading} color="accent">
+      {error && <div className="text-xs sm:text-sm text-red-500">{error}</div>}
+      <Button type="submit" loading={uploading} color="accent" className="w-full sm:w-auto">
         {uploading ? "Uploading..." : "Upload"}
       </Button>
     </form>

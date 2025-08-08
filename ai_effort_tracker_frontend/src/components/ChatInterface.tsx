@@ -41,15 +41,15 @@ export default function ChatInterface() {
   }
 
   return (
-    <section className="flex flex-col h-full min-h-[410px] border rounded-lg bg-white shadow-inner p-4 relative">
-      <h2 className="font-semibold text-lg mb-2 text-primary">
+    <section className="flex flex-col h-full min-h-[340px] sm:min-h-[410px] border rounded-lg bg-white shadow-inner p-2 sm:p-4 relative w-full max-w-full">
+      <h2 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2 text-primary">
         Effort Analysis Chat
       </h2>
-      <div className="flex-1 overflow-y-auto mb-1 space-y-2 pr-2">
+      <div className="flex-1 overflow-y-auto mb-1 space-y-2 pr-1 sm:pr-2">
         {messages.map((msg, i) => (
           <div
             key={i}
-            className={`max-w-[80%] px-3 py-2 rounded-lg text-base ${
+            className={`max-w-[92%] sm:max-w-[80%] px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-base ${
               msg.sender === "user"
                 ? "ml-auto bg-primary text-white"
                 : "mr-auto bg-gray-200 text-secondary"
@@ -62,12 +62,12 @@ export default function ChatInterface() {
       </div>
       <form
         onSubmit={handleSend}
-        className="flex gap-2 mt-2"
+        className="flex flex-col xs:flex-row gap-2 xs:gap-2 mt-2"
         autoComplete="off"
       >
         <input
           type="text"
-          className="flex-1 border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="flex-1 border rounded px-2 sm:px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary w-full"
           placeholder={
             connected ? "Ask for analysis..." : "Connecting to AI service..."
           }
