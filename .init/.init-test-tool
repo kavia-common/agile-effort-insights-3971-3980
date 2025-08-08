@@ -1,0 +1,4 @@
+{
+    "command": "npm run build",
+    "working_directory": "/home/kavia/workspace/code-generation/agile-effort-insights-3971-3980/ai_effort_tracker_frontend"
+}
